@@ -33,9 +33,9 @@ RSpec.describe 'Shopping Cart Spec Harness' do
       expect(@product.quantity).to eq(10)
     end
 
-    it '2. Product #total_price' do
-      expect(@product).to respond_to(:total_price).with(0).argument
-      expect(@product.total_price).to eq(37.0)
+    it '2. Product #potential_revenue' do
+      expect(@product).to respond_to(:potential_revenue).with(0).argument
+      expect(@product.potential_revenue).to eq(37.0)
     end
 
     it '3. Product #is_hoarded?' do
