@@ -25,6 +25,15 @@ pry(main)> product = Product.new(:paper, 'toilet paper', 3.70, '10')
 pry(main)> product.category
 #=> :paper
 
+pry(main)> product.name
+#=> "toilet paper"
+
+pry(main)> product.unit_price
+#=> 3.70
+
+pry(main)> product.quantity
+#=> 10
+
 pry(main)> product.total_price
 #=> 37.0
 
@@ -168,7 +177,7 @@ pry(main)> product4 = Product.new(:produce, 'apples', 0.99, '20')
 pry(main)> cart.add_product(product4)
 
 pry(main)> cart.sorted_products_by_quantity
-#=> [#<Product:0x00007fccd2985f53...>, #<Product:0x00007fccd2985f51...>, #<Product:0x00007fccd2985f48...>, #<Product:0x00007fccd29b5720...>]
+#=> [#<Product:0x00007fccd2985f53...>, #<Product:0x00007fccd29b5720...>, #<Product:0x00007fccd2985f48...>, #<Product:0x00007fccd2985f51...>]
 
 pry(main)> cart.product_breakdown
 #=> {:meat=>[#<Product:0x00007fccd2985f48...>], :paper=> [#<Product:0x00007fccd29b5720...>, #<Product:0x00007fccd2985f51...>], :produce=> [#<Product:0x00007fccd2985f53...>]}
