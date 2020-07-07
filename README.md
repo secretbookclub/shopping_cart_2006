@@ -25,10 +25,7 @@ pry(main)> product = Product.new(:paper, 'toilet paper', 3.70, '10')
 pry(main)> product.category
 #=> :paper
 
-pry(main)> product.quantity
-#=> 10
-
-pry(main)> product.potential_revenue
+pry(main)> product.total_price
 #=> 37.0
 
 pry(main)> product.is_hoarded?
