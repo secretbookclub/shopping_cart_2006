@@ -20,16 +20,32 @@ class ShoppingCartTest < Minitest::Test
 
   def test_can_add_products
     cart = ShoppingCart.new('King Soopers', '30items')
-    product1 = Product.new(:paper, 'toilet paper', 3.70, '10')
-    product2 = Product.new(:meat, 'chicken', 4.50, '2')
+    product1 = Product.new(:paper, 'toilet paper', 3.70, 1)
+    product2 = Product.new(:meat, 'chicken', 4.50, 1)
 
     assert_equal [product1], cart.add_product(product1)
     assert_equal [product1, product2], cart.add_product(product2)
   end
 
   def test_can_turn_details_into_hash
+    skip
     cart = ShoppingCart.new('King Soopers', '30items')
 
     assert_equal ({name: "King Soopers", capacity: 30}), cart.details
   end
+
+  def test_can_find_total_products
+    # skip
+    cart = ShoppingCart.new('King Soopers', '30items')
+    product1 = Product.new(:paper, 'toilet paper', 3.70, 1)
+    product2 = Product.new(:meat, 'chicken', 4.50, 1)
+    product3 = Product.new(:paper, 'tissue paper', 1.25, 1)
+
+    cart.add_product(product1)
+    cart.add_product(product2)
+    cart.add_product(product3)
+
+    assert_equal 13, cart.total_number_of_products
+  end
+
 end
