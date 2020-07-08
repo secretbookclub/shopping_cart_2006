@@ -25,13 +25,14 @@ class ShoppingCartTest < Minitest::Test
 
     assert_equal [product1], cart.add_product(product1)
     assert_equal [product1, product2], cart.add_product(product2)
+    # assert_equal @products, cart.add_product(product2)
   end
 
   def test_can_turn_details_into_hash
     skip
     cart = ShoppingCart.new('King Soopers', '30items')
 
-    assert_equal ({name: "King Soopers", capacity: 30}), cart.details
+    assert_equal ({name: 'King Soopers', capacity: 30}), cart.details
   end
 
   def test_can_find_total_products
@@ -44,6 +45,8 @@ class ShoppingCartTest < Minitest::Test
     cart.add_product(product1)
     cart.add_product(product2)
     cart.add_product(product3)
+
+    # Why is @products array returning nil? add_product seems to be working fine
 
     assert_equal 13, cart.total_number_of_products
   end

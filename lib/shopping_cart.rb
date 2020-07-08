@@ -20,7 +20,8 @@ class ShoppingCart
   # end
 
 # "Nil can't be coerced into an integer"
+# Not understanding why @products array is coming back nil
   def total_number_of_products
-    (@products.length * @quantity).to_i
+    @products.length.to_i * @quantity.to_i
   end
 end
