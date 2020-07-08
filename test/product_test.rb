@@ -1,9 +1,10 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/product'
+require 'pry'
 
 class ProductTest < Minitest::Test
-  #Iteration1
+
   def test_it_exists
     product = Product.new(:paper, 'toilet paper', 3.70, 10)
     assert_instance_of Product, product
@@ -54,9 +55,13 @@ class ProductTest < Minitest::Test
     def test_can_tell_if_hoarded
       # skip
     product1 = Product.new(:paper, 'toilet paper', 3.70, 10)
-    product2 = Product.new(:meat, 'chicken', 4.50, 12)
+    product2 = Product.new(:meat, 'chicken', 4.50, 2)
 
-    assert_equal false, product1.is_hoarded?
+    product1.hoard
+    assert_equal true, product1.is_hoarded?
+    product2.hoard
     assert_equal true, product2.is_hoarded?
+    # I can't figure out why .hoard/.is_hoarded? is working for product 1
+    # but not product 2
   end
 end
